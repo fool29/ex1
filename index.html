@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Interest Calculator</title>
+</head>
+<body>
+
+    <h2>Simple Interest Calculator</h2>
+
+    <!-- VIEW -->
+    Principal: <input type="number" id="p"><br><br>
+    Rate (%): <input type="number" id="r"><br><br>
+    Time (years): <input type="number" id="t"><br><br>
+
+    <button onclick="controller()">Calculate</button>
+
+    <h3 id="output"></h3>
+
+    <script>
+        // MODEL
+        function calculateSI(p, r, t) {
+            return (p * r * t) / 100;
+        }
+
+        // CONTROLLER
+        function controller() {
+            let p = document.getElementById("p").value;
+            let r = document.getElementById("r").value;
+            let t = document.getElementById("t").value;
+
+            let result = calculateSI(p, r, t);
+
+            document.getElementById("output").innerText =
+                "Simple Interest = " + result;
+        }
+    </script>
+
+</body>
+</html>
